@@ -6,6 +6,11 @@ int main(int argc, char* argv[]) {
 	auto gl = std::locale::global(l);
 
 	QApplication app(argc, argv);
+	app.setStyle("fusion");
+	app.setOrganizationName("Biscuit-lab");
+	app.setOrganizationDomain("www.biscuit-lab.com");
+	app.setApplicationName("MDViewer");
+
 	MDViewer window;
 	window.show();
 	if (argc > 1) {
