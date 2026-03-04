@@ -31,7 +31,7 @@ bool MDViewer::LoadURL(QUrl const& url) {
 	std::filesystem::path path = url.toLocalFile().toStdWString();
 	if (path.empty())
 		return false;
-	if (path.extension() != L".md") {
+	if (auto iter = std::ranges::find(s_exts, path.extension().string()); iter == s_exts.end()) {
 		QMessageBox::warning(this, "Invalid File", "Please select a Markdown file with .md extension.");
 		return false;
 	}
@@ -45,7 +45,8 @@ bool MDViewer::LoadURL(QUrl const& url) {
 void MDViewer::dragEnterEvent(QDragEnterEvent* event) {
 	if (auto urls = event->mimeData()->urls(); !urls.isEmpty()) {
 		auto const& url = urls.first();
-		if (std::filesystem::path path = url.toLocalFile().toStdWString(); path.extension() == L".md") {
+		std::filesystem::path path = url.toLocalFile().toStdWString();
+		if (auto iter = std::ranges::find(s_exts, path.extension().string()); iter != s_exts.end()) {
 			event->acceptProposedAction();
 			return;
 		}
