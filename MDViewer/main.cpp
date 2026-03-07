@@ -10,8 +10,11 @@ int main(int argc, char* argv[]) {
 	app.setOrganizationName("Biscuit-lab");
 	app.setOrganizationDomain("www.biscuit-lab.com");
 	app.setApplicationName("MDViewer");
+	// load icon MDViewer/Icon.ico
+	app.setWindowIcon(QIcon(":/MDViewer/Icon.ico"));
 
 	MDViewer window;
+	window.setWindowIcon(app.windowIcon());
 	window.show();
 	if (argc > 1) {
 		auto url = QUrl::fromLocalFile(argv[1]);

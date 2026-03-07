@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="MDViewer">
+    <qresource prefix="/MDViewer">
+        <file>Icon.ico</file>
     </qresource>
 </RCC>
