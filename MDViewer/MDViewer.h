@@ -5,14 +5,19 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_MDViewer.h"
+#include "QDocumentWindow.h"
 
 class QDragEnterEvent;
 class QDropEvent;
 
 using namespace std::literals;
 
-class MDViewer : public QMainWindow {
+class MDViewer : public QDocumentWindow {
 	Q_OBJECT
+
+public:
+	using this_t = MDViewer;
+	using base_t = QDocumentWindow;
 
 public:
 	inline static std::array s_exts {".md"sv, ".txt"sv, ".html"sv, ".htm"sv};

@@ -7,8 +7,13 @@
 
 #include "MDViewer.h"
 
-MDViewer::MDViewer(QWidget* parent) : QMainWindow(parent) {
+MDViewer::MDViewer(QWidget* parent) : QDocumentWindow(parent) {
 	ui.setupUi(this);
+
+#ifndef _DEBUG
+	registerFileType("MDViewer.md", "markdown", ".md", 0, true);
+	enableShellOpen();
+#endif
 
 	connect(ui.actionLoad, &QAction::triggered, this, [this]() {
 		auto str = QFileDialog::getOpenFileName(nullptr, "Open File", "", "Markdown Files (*.md);;All Files (*.*)");

@@ -104,11 +104,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="QDocumentWindow.cpp" />
     <QtRcc Include="MDViewer.qrc" />
     <QtUic Include="MDViewer.ui" />
     <QtMoc Include="MDViewer.h" />
     <ClCompile Include="MDViewer.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="QDocumentWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Icon.ico" />

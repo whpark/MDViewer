@@ -6,5 +6,7 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="MDViewer/MDViewer.vcxproj" Id="a34bb33f-03fd-4e7c-9301-c1b64bc43007" />
-  <Project Path="Setup/Setup.vdproj" Type="Installer" />
+  <Project Path="Setup/Setup.vdproj" Type="Installer">
+    <Build />
+  </Project>
 </Solution>
